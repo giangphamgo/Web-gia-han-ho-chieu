@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>Danh sách xin gia hạn</center>
+    <% passports.forEach(function(passport){ %>
+        Mã Hộ Chiếu: <%=passport[0]%><br>
+        Ngày hết hạn: <%=passport[1]%><br>
+        <form action="/LT" method="post">
+            <input type="hidden" name="passport" value="<%= passport[0] %>">
+            <input type="submit" name="action" value="Cho gia hạn" />
+        </form>
+        <hr>
+    <% }); %>
+</body>
+</html>

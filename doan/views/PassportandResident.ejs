@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table border='1'>
+            <tr>
+                <td></td>
+                <td>Passport</td>
+                <td>Resident</td>
+            </tr>
+            <tr>
+                <td>Mã Hộ Chiếu</td>
+                <td><%= detail[0] %></td>
+                <td><%= detail[7] %></td>
+            </tr>
+            <tr>
+                <td>Họ Và Tên</td>
+                <td><%= detail[1] %></td>
+                <td><%= detail[8] %></td>
+            </tr>
+            <tr>
+                <td>Địa Chỉ</td>
+                <td><%= detail[2] %></td>
+                <td><%= detail[9] %></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td><%= detail[3] %></td>
+                <td><%= detail[10] %></td>
+            </tr>
+            <tr>
+                <td>CMND</td>
+                <td><%= detail[4] %></td>
+                <td><%= detail[11] %></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại</td>
+                <td><%= detail[5] %></td>
+                <td><%= detail[12] %></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><%= detail[6] %></td>
+                <td><%= detail[13] %></td>
+            </tr>
+        </table>
+        <form action='/XT/<%= detail[0] %>' method='post'>
+            <input type="hidden" name="name" value="<%= detail[1] %>">
+            <input type="hidden" name="adress" value="<%= detail[2] %>">
+            <input type="hidden" name="gender" value="<%= detail[3] %>">
+            <input type="hidden" name="CMND" value="<%= detail[4] %>">
+            <input type="hidden" name="number" value="<%= detail[5] %>">
+            <input type="hidden" name="mail" value="<%= detail[6] %>">
+            <input type="submit" name="action" value="Hợp lệ" />
+            <input type="submit" name="action" value="Không hợp lệ" />
+        </form>
+    </center>
+</body>
+</html>

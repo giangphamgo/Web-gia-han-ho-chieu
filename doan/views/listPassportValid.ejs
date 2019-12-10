@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>Danh sách xin gia hạn</center>
+    <% passports.forEach(function(passport){ %>
+        Mã Hộ Chiếu: <a href='/XT/<%=passport[0]%>'><%=passport[0]%></a><br>
+        Họ và tên: <%=passport[1]%><br>
+        Địa chỉ: <%=passport[2]%><br>
+        Phái: <%=passport[3]%><br>
+        CMND: <%=passport[4]%><br>
+        Số điện thoại: <%=passport[5]%><br>
+        Email: <%=passport[6]%><br>
+        <form action="/XD" method="post">
+            <input type="hidden" name="passport" value="<%= passport[0] %>">
+            <input type="submit" name="action" value="Đồng ý" />
+            <input type="submit" name="action" value="Không đồng ý" />
+        </form>
+        <hr>
+    <% }); %>
+</body>
+</html>
